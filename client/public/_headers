@@ -1,0 +1,9 @@
+# Long-cache hashed Vite assets (filenames change on rebuild, so safe forever)
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Never cache index.html so deploys go live immediately
+/
+  Cache-Control: public, max-age=0, must-revalidate
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate

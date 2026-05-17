@@ -1,0 +1,31 @@
+/* ============================================================
+   Midnight Zoo - Asset URLs
+   Images live in /client/public/images/ and are served at /images/...
+   Download originals from your Manus environment and drop them in.
+   See README.md "Image migration" for the file list.
+   ============================================================ */
+
+// -- Logo ---------------------------------------------------------------------
+// Hosted on your existing GoDaddy CDN. Replace once you migrate the logo file.
+export const LOGO =
+  "https://lirp.cdn-website.com/md/dmtmpl/dms3rep/multi/opt/midnight-zoo-logo-transparent-1920w.png";
+
+// -- Hero (Milky Way above Ironwood Forest National Monument, AZ) ------------
+export const HERO_MILKYWAY = "/images/milkyway_az.webp";
+
+// -- Kalamazoo Gallery -------------------------------------------------------
+export const ANDROMEDA_M31 = "/images/andromeda_m31.webp";
+export const CYGNUS_LOOP = "/images/cygnus_loop_veil.webp";
+export const ROSETTE_NEBULA = "/images/rosette_nebula.webp";
+export const ORION_COMPLEX = "/images/orion_complex_widefield.webp";
+export const IC1805_HEART = "/images/ic1805_heart_nebula.webp";
+export const PLEIADES_M45 = "/images/pleiades_m45.webp";
+export const M81_M82_BODES = "/images/m81_m82_bodes_galaxy.webp";
+export const WAXING_CRESCENT = "/images/waxing_crescent_moon.webp";
+
+// -- Travel Gallery ----------------------------------------------------------
+export const MILKYWAY_IRONWOOD = "/images/milkyway_az.webp";
+
+// -- Seestar Gallery ---------------------------------------------------------
+export const SEESTAR_M51_WHIRLPOOL = "/images/seestar_m51_whirlpool.webp";
+export const SEESTAR_M44_BEEHIVE = "/images/seestar_m44_beehive.webp";
