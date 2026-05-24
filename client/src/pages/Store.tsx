@@ -1,16 +1,26 @@
 /* ============================================================
    Online Store - Midnight Zoo
-   - When Shopify env vars are set: pulls products from Storefront
-     API, real Add-to-Cart, redirects to Shopify-hosted checkout.
-   - When env vars are NOT set: shows hardcoded preview products
-     with a "Store coming soon" toast (same UX Manus shipped).
+   ============================================================
+   COMING SOON MODE — the page currently renders the ComingSoon
+   placeholder below. The full Store component (Shopify Storefront
+   API integration, cart, fallback catalog) is preserved intact as
+   StoreFull() further down; nothing was deleted.
+
+   This page will be rebuilt around the live Shopify Storefront API.
+   The preserved code is the Manus-era starting point to work from.
+
+   TO GO LIVE LATER:
+     1. Remove (or rename) the ComingSoon function below.
+     2. Rename "function StoreFull()" back to
+        "export default function Store()".
    ============================================================ */
 
 import { useEffect, useMemo, useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { ShoppingCart, Star, Package, Printer, Image as ImageIcon } from "lucide-react";
+import { ShoppingCart, Star, Package, Printer, Image as ImageIcon, Clock } from "lucide-react";
 import { toast } from "sonner";
+import { Link } from "wouter";
 
 import { useCart } from "@/contexts/CartContext";
 import { fetchProducts, formatMoney, type ShopifyProduct } from "@/lib/shopify";
@@ -23,6 +33,96 @@ import {
   ORION_COMPLEX as STORE_BANNER,
   PLEIADES_M45 as STARFRONT_BANNER,
 } from "@/lib/assets";
+
+/* ── Coming Soon placeholder (currently live) ──────────────── */
+export default function Store() {
+  return (
+    <div className="min-h-screen" style={{ background: "oklch(0.10 0.025 240)" }}>
+      <Navigation />
+
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background — store banner image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: `url(${STORE_BANNER})`,
+            backgroundPosition: "center 30%",
+          }}
+        />
+        {/* Dark overlay */}
+        <div
+          className="absolute inset-0"
+          style={{ background: "oklch(0.07 0.015 240 / 0.82)" }}
+        />
+
+        <div className="relative z-10 text-center max-w-2xl mx-auto px-6">
+          <div className="flex items-center justify-center gap-3 mb-8">
+            <Star size={14} style={{ color: "oklch(0.72 0.12 75)" }} />
+            <ShoppingCart size={20} style={{ color: "oklch(0.72 0.12 75)" }} />
+            <Star size={14} style={{ color: "oklch(0.72 0.12 75)" }} />
+          </div>
+
+          <p className="nav-label mb-4" style={{ color: "oklch(0.72 0.12 75)" }}>
+            Online Store
+          </p>
+
+          <h1
+            className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-6"
+            style={{
+              fontFamily: "'Gilda Display', Georgia, serif",
+              color: "oklch(0.97 0.005 240)",
+              textShadow: "0 2px 30px oklch(0 0 0 / 0.6)",
+            }}
+          >
+            Coming Soon
+          </h1>
+
+          <div className="flex items-center justify-center gap-3 mb-8">
+            <hr style={{ flex: 1, borderColor: "oklch(0.72 0.12 75 / 0.4)", borderTopWidth: 1 }} />
+            <Clock size={14} style={{ color: "oklch(0.72 0.12 75)" }} />
+            <hr style={{ flex: 1, borderColor: "oklch(0.72 0.12 75 / 0.4)", borderTopWidth: 1 }} />
+          </div>
+
+          <p
+            className="text-lg leading-relaxed mb-6"
+            style={{
+              fontFamily: "'Figtree', system-ui, sans-serif",
+              color: "oklch(0.78 0.008 240)",
+              lineHeight: "1.8",
+            }}
+          >
+            Fine art prints, branded merchandise, and a custom vinyl wrap line for
+            smart telescopes are on the way. The store is being built now and will
+            open here soon.
+          </p>
+
+          <p
+            className="text-base italic mb-10"
+            style={{
+              fontFamily: "'Gilda Display', Georgia, serif",
+              color: "oklch(0.55 0.01 240)",
+            }}
+          >
+            In the meantime, explore the Kalamazoo Gallery — what's possible from Bortle 7 urban skies.
+          </p>
+
+          <Link href="/kalamazoo-gallery">
+            <button className="btn-gold">View Kalamazoo Gallery</button>
+          </Link>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
+}
+
+/* ============================================================
+   FULL STORE PAGE — preserved, not currently rendered.
+   Rebuild target for the live Shopify Storefront API.
+   To restore: delete the ComingSoon export above and rename
+   "function StoreFull()" to "export default function Store()".
+   ============================================================ */
 
 // ── Fallback product list (used when Shopify env vars are not set) ──────────
 // These are NOT real products; they preview the catalog while the Shopify
@@ -223,7 +323,8 @@ const fulfillmentInfo = [
 
 // ── Component ────────────────────────────────────────────────────────────────
 
-export default function Store() {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function StoreFull() {
   const { addItem, cart, shopifyEnabled, loading: cartLoading } = useCart();
 
   const [shopifyProducts, setShopifyProducts] = useState<ShopifyProduct[] | null>(null);

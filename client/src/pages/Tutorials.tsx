@@ -1,21 +1,124 @@
 /* ============================================================
    Tutorials — Midnight Zoo
    Technical guides, processing walkthroughs, equipment guides
+   ============================================================
+   COMING SOON MODE — the page currently renders the ComingSoon
+   placeholder below. The full Tutorials page is preserved intact
+   as TutorialsFull() further down; nothing was deleted.
+
+   TO GO LIVE LATER:
+     1. Remove (or rename) the ComingSoon function below.
+     2. Rename "function TutorialsFull()" back to
+        "export default function Tutorials()".
+   That's the only change needed.
    ============================================================ */
 
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { ROSETTE_NEBULA as HERO_NEBULA, CYGNUS_LOOP as HERO_GALAXY, HERO_MILKYWAY, ORION_COMPLEX as STARFRONT_BANNER, ANDROMEDA_M31 as ANDROMEDA, CYGNUS_LOOP as CYGNUS } from "@/lib/assets";
-import { BookOpen, Clock, ChevronRight, Tag } from "lucide-react";
+import {
+  HERO_MILKYWAY,
+  ROSETTE_NEBULA as HERO_NEBULA,
+  CYGNUS_LOOP as HERO_GALAXY,
+  ORION_COMPLEX as STARFRONT_BANNER,
+  ANDROMEDA_M31 as ANDROMEDA,
+  CYGNUS_LOOP as CYGNUS,
+} from "@/lib/assets";
+import { Clock, Star, ChevronRight } from "lucide-react";
 import { Link } from "wouter";
 import { toast } from "sonner";
 
+/* ── Coming Soon placeholder (currently live) ──────────────── */
+export default function Tutorials() {
+  return (
+    <div className="min-h-screen" style={{ background: "oklch(0.10 0.025 240)" }}>
+      <Navigation />
 
+      {/* Full-bleed hero with coming soon overlay */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background — real Milky Way photo */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: `url(${HERO_MILKYWAY})`,
+            backgroundPosition: "center 20%",
+          }}
+        />
+        {/* Dark overlay */}
+        <div
+          className="absolute inset-0"
+          style={{ background: "oklch(0.07 0.015 240 / 0.82)" }}
+        />
 
+        {/* Content */}
+        <div className="relative z-10 text-center max-w-2xl mx-auto px-6">
+          {/* Icon cluster */}
+          <div className="flex items-center justify-center gap-3 mb-8">
+            <Star size={14} style={{ color: "oklch(0.72 0.12 75)" }} />
+            <Star size={20} style={{ color: "oklch(0.72 0.12 75)" }} />
+            <Star size={14} style={{ color: "oklch(0.72 0.12 75)" }} />
+          </div>
 
+          <p className="nav-label mb-4" style={{ color: "oklch(0.72 0.12 75)" }}>
+            Tutorials
+          </p>
 
+          <h1
+            className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-6"
+            style={{
+              fontFamily: "'Gilda Display', Georgia, serif",
+              color: "oklch(0.97 0.005 240)",
+              textShadow: "0 2px 30px oklch(0 0 0 / 0.6)",
+            }}
+          >
+            Coming Soon
+          </h1>
 
+          <div className="flex items-center justify-center gap-3 mb-8">
+            <hr style={{ flex: 1, borderColor: "oklch(0.72 0.12 75 / 0.4)", borderTopWidth: 1 }} />
+            <Clock size={14} style={{ color: "oklch(0.72 0.12 75)" }} />
+            <hr style={{ flex: 1, borderColor: "oklch(0.72 0.12 75 / 0.4)", borderTopWidth: 1 }} />
+          </div>
 
+          <p
+            className="text-lg leading-relaxed mb-6"
+            style={{
+              fontFamily: "'Figtree', system-ui, sans-serif",
+              color: "oklch(0.78 0.008 240)",
+              lineHeight: "1.8",
+            }}
+          >
+            In-depth processing walkthroughs, equipment guides, and technical
+            tutorials built from real imaging sessions under Bortle 7 skies. The
+            full library is being written and will launch here soon.
+          </p>
+
+          <p
+            className="text-base italic mb-10"
+            style={{
+              fontFamily: "'Gilda Display', Georgia, serif",
+              color: "oklch(0.55 0.01 240)",
+            }}
+          >
+            In the meantime, explore the Kalamazoo Gallery — what's possible from Bortle 7 urban skies.
+          </p>
+
+          <Link href="/kalamazoo-gallery">
+            <button className="btn-gold">View Kalamazoo Gallery</button>
+          </Link>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
+}
+
+/* ============================================================
+   FULL TUTORIALS PAGE — preserved, not currently rendered.
+   To restore: delete the ComingSoon export above and rename
+   "function TutorialsFull()" to "export default function Tutorials()".
+   The tutorial data and styles below are kept at module scope.
+   ============================================================ */
 
 const tutorials = [
   {
@@ -92,7 +195,8 @@ const difficultyColor: Record<string, string> = {
   Advanced: "oklch(0.65 0.20 25)",
 };
 
-export default function Tutorials() {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function TutorialsFull() {
   const featured = tutorials.filter((t) => t.featured);
   const rest = tutorials.filter((t) => !t.featured);
 

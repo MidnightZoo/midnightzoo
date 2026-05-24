@@ -228,18 +228,18 @@ export default function About() {
             {[
               {
                 number: "01",
-                title: "Realism Over Aesthetics",
-                body: "Every processing decision is guided by scientific accuracy. Colors reflect actual emission wavelengths. Brightness represents real photon counts. The goal is to show what is actually there, not what looks dramatic.",
+                title: "Realism Over Perfection",
+                body: "Midnight Zoo values authenticity over artificial polish. The goal is not to manufacture impossible skies, but to reveal what is truly there through careful capture, honest processing, and respect for the night sky itself.",
               },
               {
                 number: "02",
-                title: "Discipline Over Conditions",
-                body: "The best astrophotographers don't wait for perfect skies. They develop the discipline to work within constraints — whether that's light pollution, poor seeing, or equipment limitations.",
+                title: "Technical Discipline Creates Freedom",
+                body: "Great astrophotography is built on preparation, patience, and precision. From long integrations to thoughtful processing decisions, Midnight Zoo believes technical discipline is what allows creativity to emerge naturally.",
               },
               {
                 number: "03",
-                title: "Sharing the Process",
-                body: "Every image is accompanied by the technical details, the challenges encountered, and the lessons learned. The goal is not just to produce beautiful images, but to help others produce their own.",
+                title: "The Sky Belongs to Everyone",
+                body: "You do not need perfect conditions, elite locations, or ideal equipment to create meaningful work. Midnight Zoo embraces limited skies, difficult weather, and real-world constraints to inspire others to pursue the night anyway.",
               },
             ].map((principle) => (
               <div

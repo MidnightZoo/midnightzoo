@@ -17,6 +17,7 @@ import {
   ORION_COMPLEX,
   ROSETTE_NEBULA,
   PLEIADES_M45,
+  SEESTAR_M51_WHIRLPOOL,
 } from "@/lib/assets";
 
 const newsItems = [
@@ -59,7 +60,7 @@ const sections = [
     title: "Seestar Gallery",
     description: "What an inexpensive smart telescope can do. The Seestar S50 proves dark skies aren't required for stunning results.",
     href: "/seestar-gallery",
-    image: ROSETTE_NEBULA,
+    image: SEESTAR_M51_WHIRLPOOL,
   },
   {
     icon: BookOpen,

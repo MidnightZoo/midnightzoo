@@ -1,19 +1,147 @@
 /* ============================================================
    YouTube Page — Midnight Zoo
-   Links to YouTube videos with in-depth descriptions
+   ============================================================
+   COMING SOON MODE — the page currently renders the ComingSoon
+   placeholder below. The full video-library page (per-video
+   detail, chapters, behind-the-scenes structure) is preserved
+   intact as YouTubePageFull() further down; nothing was deleted.
+
+   NOTE: the preserved video data is placeholder content — every
+   youtubeId is still "dQw4w9WgXcQ". Replace those with real
+   video IDs before going live.
+
+   TO GO LIVE LATER:
+     1. Remove (or rename) the ComingSoon function below.
+     2. Rename "function YouTubePageFull()" back to
+        "export default function YouTubePage()".
    ============================================================ */
 
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { ROSETTE_NEBULA as HERO_NEBULA, M81_M82_BODES as HERO_GALAXY, HERO_MILKYWAY, ORION_COMPLEX as STARFRONT_BANNER, ANDROMEDA_M31 as ANDROMEDA, CYGNUS_LOOP as CYGNUS } from "@/lib/assets";
-import { Youtube, Clock, Eye, ThumbsUp, ExternalLink, Play } from "lucide-react";
+import {
+  ROSETTE_NEBULA as HERO_NEBULA,
+  M81_M82_BODES as HERO_GALAXY,
+  HERO_MILKYWAY,
+  ORION_COMPLEX as STARFRONT_BANNER,
+  ANDROMEDA_M31 as ANDROMEDA,
+  CYGNUS_LOOP as CYGNUS,
+} from "@/lib/assets";
+import { Youtube, Clock, Eye, ThumbsUp, ExternalLink, Play, Star } from "lucide-react";
+import { Link } from "wouter";
 
+const CHANNEL_URL = "https://www.youtube.com/@midnightzooastro";
 
+/* ── Coming Soon placeholder (currently live) ──────────────── */
+export default function YouTubePage() {
+  return (
+    <div className="min-h-screen" style={{ background: "oklch(0.10 0.025 240)" }}>
+      <Navigation />
 
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background — real Milky Way photo */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: `url(${HERO_MILKYWAY})`,
+            backgroundPosition: "center 20%",
+          }}
+        />
+        {/* Dark overlay */}
+        <div
+          className="absolute inset-0"
+          style={{ background: "oklch(0.07 0.015 240 / 0.82)" }}
+        />
 
+        <div className="relative z-10 text-center max-w-2xl mx-auto px-6">
+          <div className="flex items-center justify-center gap-3 mb-8">
+            <Star size={14} style={{ color: "oklch(0.72 0.12 75)" }} />
+            <Youtube size={22} style={{ color: "oklch(0.72 0.12 75)" }} />
+            <Star size={14} style={{ color: "oklch(0.72 0.12 75)" }} />
+          </div>
 
+          <p className="nav-label mb-4" style={{ color: "oklch(0.72 0.12 75)" }}>
+            YouTube
+          </p>
 
+          <h1
+            className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-6"
+            style={{
+              fontFamily: "'Gilda Display', Georgia, serif",
+              color: "oklch(0.97 0.005 240)",
+              textShadow: "0 2px 30px oklch(0 0 0 / 0.6)",
+            }}
+          >
+            Coming Soon
+          </h1>
 
+          <div className="flex items-center justify-center gap-3 mb-8">
+            <hr style={{ flex: 1, borderColor: "oklch(0.72 0.12 75 / 0.4)", borderTopWidth: 1 }} />
+            <Clock size={14} style={{ color: "oklch(0.72 0.12 75)" }} />
+            <hr style={{ flex: 1, borderColor: "oklch(0.72 0.12 75 / 0.4)", borderTopWidth: 1 }} />
+          </div>
+
+          <p
+            className="text-lg leading-relaxed mb-6"
+            style={{
+              fontFamily: "'Figtree', system-ui, sans-serif",
+              color: "oklch(0.78 0.008 240)",
+              lineHeight: "1.8",
+            }}
+          >
+            Behind-the-scenes breakdowns and in-depth guides tied to specific
+            YouTube videos will live here as the long-form library grows. Those
+            companion pages are coming soon.
+          </p>
+
+          <p
+            className="text-base italic mb-10"
+            style={{
+              fontFamily: "'Gilda Display', Georgia, serif",
+              color: "oklch(0.55 0.01 240)",
+            }}
+          >
+            For now, head over to the channel directly to watch the latest from Midnight Zoo.
+          </p>
+
+          <div className="flex items-center justify-center gap-4 flex-wrap">
+            <a
+              href={CHANNEL_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-gold inline-flex items-center gap-2"
+            >
+              <Youtube size={16} />
+              Visit Our YouTube Channel
+            </a>
+            <Link href="/kalamazoo-gallery">
+              <button
+                className="nav-label px-5 py-3 transition-colors duration-200"
+                style={{
+                  color: "oklch(0.72 0.12 75)",
+                  border: "1px solid oklch(0.72 0.12 75 / 0.4)",
+                  fontSize: "0.7rem",
+                  background: "transparent",
+                }}
+              >
+                View Kalamazoo Gallery
+              </button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
+}
+
+/* ============================================================
+   FULL YOUTUBE VIDEO LIBRARY — preserved, not currently rendered.
+   To restore: delete the ComingSoon export above and rename
+   "function YouTubePageFull()" to
+   "export default function YouTubePage()".
+   Remember to replace placeholder youtubeId values with real ones.
+   ============================================================ */
 
 interface VideoItem {
   id: string;
@@ -345,7 +473,8 @@ function VideoCard({ video, featured = false }: { video: VideoItem; featured?: b
   );
 }
 
-export default function YouTubePage() {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function YouTubePageFull() {
   const featured = videos.filter((v) => v.featured);
   const rest = videos.filter((v) => !v.featured);
 
