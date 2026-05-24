@@ -18,6 +18,7 @@ import {
   PLEIADES_M45,
   M81_M82_BODES,
   WAXING_CRESCENT,
+  KALAMAZOO_DOWNTOWN,
 } from "@/lib/assets";
 
 const kalamazooImages: GalleryImage[] = [
@@ -171,17 +172,8 @@ export default function KalamazooGallery() {
                 className="text-5xl sm:text-6xl font-bold mb-2"
                 style={{ fontFamily: "'Gilda Display', Georgia, serif", color: "oklch(0.93 0.005 240)" }}
               >
-                Kalamazoo
+                Kalamazoo Gallery
               </h1>
-              <h2
-                className="text-3xl font-bold italic mb-6"
-                style={{
-                  fontFamily: "'Gilda Display', Georgia, serif",
-                  color: "oklch(0.72 0.12 75)",
-                }}
-              >
-                Gallery
-              </h2>
               <p
                 className="text-base leading-relaxed mb-4"
                 style={{ color: "oklch(0.70 0.01 240)", fontFamily: "'Figtree', system-ui, sans-serif" }}
@@ -202,11 +194,11 @@ export default function KalamazooGallery() {
               </p>
             </div>
 
-            {/* Featured image — Andromeda */}
+            {/* Featured image — Kalamazoo Downtown */}
             <div className="relative">
               <img
-                src={ANDROMEDA_M31}
-                alt="Andromeda Galaxy from Kalamazoo"
+                src={KALAMAZOO_DOWNTOWN}
+                alt="Kalamazoo Downtown"
                 className="w-full object-cover"
                 style={{
                   border: "1px solid oklch(0.72 0.12 75 / 0.25)",

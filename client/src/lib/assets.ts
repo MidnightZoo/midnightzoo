@@ -14,6 +14,7 @@ export const LOGO =
 export const HERO_MILKYWAY = "/images/milkyway_az.webp";
 
 // -- Kalamazoo Gallery -------------------------------------------------------
+export const KALAMAZOO_DOWNTOWN = "/images/kzoo.webp";
 export const ANDROMEDA_M31 = "/images/andromeda_m31.webp";
 export const CYGNUS_LOOP = "/images/cygnus_loop_veil.webp";
 export const ROSETTE_NEBULA = "/images/rosette_nebula.webp";

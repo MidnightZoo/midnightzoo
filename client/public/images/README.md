@@ -17,6 +17,7 @@ the build root).
 | `rosette_nebula.webp`             | Rosette Nebula                          |
 | `orion_complex_widefield.webp`    | Orion complex (widefield)               |
 | `ic1805_heart_nebula.webp`        | Heart Nebula (IC 1805)                  |
+| `kzoo.webp`                       | Kalmazoo Downtown                       |
 | `pleiades_m45.webp`               | Pleiades (M45)                          |
 | `m81_m82_bodes_galaxy.webp`       | Bode's & Cigar Galaxies (M81/M82)       |
 | `waxing_crescent_moon.webp`       | Waxing crescent moon                    |
