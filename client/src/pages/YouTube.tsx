@@ -386,7 +386,7 @@ export default function YouTubePage() {
                 Behind-the-scenes imaging sessions, complete processing walkthroughs, gear reviews, and travel documentaries. Every video is a complete story from setup to final image.
               </p>
               <a
-                href="https://www.youtube.com/@midnightzoo"
+                href="https://www.youtube.com/@midnightzooastro"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 mt-6 btn-gold"
@@ -448,7 +448,7 @@ export default function YouTubePage() {
             New videos are published regularly — imaging sessions, processing tutorials, gear reviews, and dark site expeditions. Subscribe to be notified when new content is posted.
           </p>
           <a
-            href="https://www.youtube.com/@midnightzoo"
+            href="https://www.youtube.com/@midnightzooastro"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-gold inline-flex items-center gap-2"

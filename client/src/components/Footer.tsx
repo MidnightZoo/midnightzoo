@@ -21,7 +21,7 @@ const socialLinks = [
   { href: "https://www.facebook.com/midnightzoo", icon: Facebook, label: "Facebook" },
   { href: "https://www.instagram.com/midnightzoo", icon: Instagram, label: "Instagram" },
   { href: "https://twitter.com/midnightzoo", icon: Twitter, label: "X / Twitter" },
-  { href: "https://www.youtube.com/@midnightzoo", icon: Youtube, label: "YouTube" },
+  { href: "https://www.youtube.com/@midnightzooastro", icon: Youtube, label: "YouTube" },
 ];
 
 export default function Footer() {
