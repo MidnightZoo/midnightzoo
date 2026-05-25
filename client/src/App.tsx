@@ -16,11 +16,15 @@ import About from "./pages/About";
 import YouTubePage from "./pages/YouTube";
 import SeestarGallery from "./pages/SeestarGallery";
 import MilkyWayRises from "./pages/MilkyWayRises";
+import Galleries from "./pages/Galleries";
+import Articles from "./pages/Articles";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/galleries" component={Galleries} />
+      <Route path="/articles" component={Articles} />
       <Route path="/starfront-gallery" component={StarfrontGallery} />
       <Route path="/kalamazoo-gallery" component={KalamazooGallery} />
       <Route path="/travel-gallery" component={TravelGallery} />
