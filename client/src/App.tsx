@@ -18,6 +18,7 @@ import SeestarGallery from "./pages/SeestarGallery";
 import MilkyWayRises from "./pages/MilkyWayRises";
 import Galleries from "./pages/Galleries";
 import Articles from "./pages/Articles";
+import ScrollToTop from "./components/ScrollToTop";
 
 function Router() {
   return (
@@ -47,6 +48,7 @@ function App() {
       <ThemeProvider defaultTheme="dark">
         <CartProvider>
           <TooltipProvider>
+            <ScrollToTop />
             <Toaster richColors position="bottom-right" />
             <Router />
           </TooltipProvider>
