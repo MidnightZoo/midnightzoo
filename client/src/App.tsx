@@ -15,6 +15,7 @@ import Store from "./pages/Store";
 import About from "./pages/About";
 import YouTubePage from "./pages/YouTube";
 import SeestarGallery from "./pages/SeestarGallery";
+import MilkyWayRises from "./pages/MilkyWayRises";
 
 function Router() {
   return (
@@ -29,6 +30,7 @@ function Router() {
       <Route path="/store" component={Store} />
       <Route path="/about" component={About} />
       <Route path="/youtube" component={YouTubePage} />
+      <Route path="/articles/the-milky-way-rises" component={MilkyWayRises} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>

@@ -160,11 +160,11 @@ export default function Home() {
                 fontFamily: "'Figtree', system-ui, sans-serif",
               }}
             >
-              Ironwood Forest National Monument, Arizona — wide-field astrophotography from dark sites
+              Escape reality with me in this recount of my spring Milky Way chase...adventure awaits.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link href="/kalamazoo-gallery">
-                <button className="btn-gold">Explore Gallery</button>
+              <Link href="/articles/the-milky-way-rises">
+                <button className="btn-gold">Read the Story</button>
               </Link>
               <Link href="/about">
                 <button className="btn-ghost-gold">Our Story</button>

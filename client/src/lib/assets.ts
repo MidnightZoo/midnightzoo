@@ -27,6 +27,13 @@ export const WAXING_CRESCENT = "/images/waxing_crescent_moon.webp";
 // -- Travel Gallery ----------------------------------------------------------
 export const MILKYWAY_IRONWOOD = "/images/milkyway_az.webp";
 
+// -- Article: The Milky Way Rises --------------------------------------------
+export const MWR_HERO = "/images/milkyway_az.webp";
+export const MWR_PRIMITIVE_ROAD = "/images/mwr_primitive_road.webp";
+export const MWR_SASCO_CROSSING = "/images/mwr_sasco_crossing.webp";
+export const MWR_IRONWOOD_SCOUT = "/images/mwr_ironwood_scout.webp";
+export const MWR_RIG_AT_NIGHT = "/images/mwr_rig_at_night.webp";
+
 // -- Seestar Gallery ---------------------------------------------------------
 export const SEESTAR_M51_WHIRLPOOL = "/images/seestar_m51_whirlpool.webp";
 export const SEESTAR_M44_BEEHIVE = "/images/seestar_m44_beehive.webp";
