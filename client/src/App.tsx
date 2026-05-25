@@ -15,6 +15,7 @@ import Store from "./pages/Store";
 import About from "./pages/About";
 import YouTubePage from "./pages/YouTube";
 import SeestarGallery from "./pages/SeestarGallery";
+import ScrollToTop from "./components/ScrollToTop";
 
 function Router() {
   return (
@@ -41,6 +42,7 @@ function App() {
       <ThemeProvider defaultTheme="dark">
         <CartProvider>
           <TooltipProvider>
+            <ScrollToTop />
             <Toaster richColors position="bottom-right" />
             <Router />
           </TooltipProvider>
