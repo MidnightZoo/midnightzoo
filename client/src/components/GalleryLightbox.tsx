@@ -6,6 +6,7 @@
 
 import { useState, useEffect, useCallback, useRef } from "react";
 import { X, ZoomIn, ZoomOut, ChevronLeft, ChevronRight, Maximize2 } from "lucide-react";
+import { formatPublishedDate } from "@/content/formatDate";
 
 export interface GalleryImage {
   id: string;
@@ -13,7 +14,10 @@ export interface GalleryImage {
   thumb?: string;
   title: string;
   object?: string;
+  /** Display string for when the image was captured (e.g. "February 19, 2026"). */
   date?: string;
+  /** ISO YYYY-MM-DD for when this image went live on the site. Distinct from capture date. */
+  publishedAt?: string;
   location?: string;
   telescope?: string;
   camera?: string;
@@ -111,7 +115,8 @@ export default function GalleryLightbox({ images, initialIndex = 0, onClose }: G
 
   const metaFields = [
     { label: "Object", value: current.object },
-    { label: "Date", value: current.date },
+    { label: "Captured", value: current.date },
+    { label: "Published", value: current.publishedAt ? formatPublishedDate(current.publishedAt) : undefined },
     { label: "Location", value: current.location },
     { label: "Telescope", value: current.telescope },
     { label: "Camera", value: current.camera },

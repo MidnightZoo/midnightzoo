@@ -8,16 +8,20 @@ import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import GalleryLightbox, { GalleryImage } from "@/components/GalleryLightbox";
+import { formatPublishedDate } from "@/content/formatDate";
+import { sortByPublishedAtDesc } from "@/content/sort";
+import LazyImage from "@/components/LazyImage";
 import { MapPin, Clock } from "lucide-react";
 import { MILKYWAY_IRONWOOD } from "@/lib/assets";
 
-const travelImages: GalleryImage[] = [
+const travelImages: GalleryImage[] = sortByPublishedAtDesc<GalleryImage>([
   {
     id: "tr-1",
     src: MILKYWAY_IRONWOOD,
     title: "Milky Way above Ironwood Forest National Monument",
     object: "Milky Way — Galactic Core",
     date: "April 15, 2025",
+    publishedAt: "2026-05-22",
     location: "Ironwood Forest National Monument, Marana, AZ — Bortle 3",
     telescope: "Canon RF 24mm f/1.4",
     camera: "Canon EOS R5 Mark II",
@@ -28,7 +32,7 @@ const travelImages: GalleryImage[] = [
     description: "This was captured between 2–3 AM in Ironwood Forest National Monument, Arizona, during a work trip that turned into something more. I rented a Jeep Wrangler, drove out into the desert, and waited for the sky to come into position.\n\nNo crowds, no noise — just desert and stars. The Milky Way core was already up over the ridge by the time I set up, with the saguaros holding the foreground. Hard to convey what it actually feels like out there. Beautiful silence, almost spooky if you aren't used to it.\n\nThis is a composite of 16 × 5-second exposures for the sky and a single 30-second exposure for the foreground, taken with a Canon R5 Mark II and RF 24mm f/1.4. The sky glow on the horizon is from Tucson, AZ, located about 38 miles to the southeast. Processed in Adobe Lightroom Classic, Photoshop, with NoiseXTerminator, StarXTerminator, StarShrink, and Sequator.",
     tags: ["Milky Way", "Wide Field", "Travel", "Dark Site", "Bortle 3", "Landscape", "Arizona", "Saguaro", "Composite"],
   },
-];
+]);
 
 export default function TravelGallery() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
@@ -83,7 +87,7 @@ export default function TravelGallery() {
               className="relative group cursor-pointer overflow-hidden"
               onClick={() => setLightboxIndex(index)}
             >
-              <img
+              <LazyImage
                 src={img.src}
                 alt={img.title}
                 className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -126,8 +130,13 @@ export default function TravelGallery() {
                   {img.object}
                 </span>
                 <span className="nav-label" style={{ color: "oklch(0.50 0.01 240)", fontSize: "0.65rem" }}>
-                  {img.date}
+                  Captured {img.date}
                 </span>
+                {img.publishedAt && (
+                  <span className="nav-label" style={{ color: "oklch(0.50 0.01 240)", fontSize: "0.65rem" }}>
+                    Published {formatPublishedDate(img.publishedAt)}
+                  </span>
+                )}
               </div>
 
               <h2

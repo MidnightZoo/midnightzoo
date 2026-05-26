@@ -8,6 +8,7 @@ import { Link } from "wouter";
 import { ArrowRight, Camera, MapPin, Telescope, Building2 } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import LazyImage from "@/components/LazyImage";
 import {
   ANDROMEDA_M31,
   HERO_MILKYWAY,
@@ -109,7 +110,7 @@ export default function Galleries() {
                   className="group relative overflow-hidden h-80 flex flex-col justify-end cursor-pointer"
                   style={{ border: "1px solid oklch(1 0 0 / 0.08)" }}
                 >
-                  <img
+                  <LazyImage
                     src={g.image}
                     alt={g.title}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"

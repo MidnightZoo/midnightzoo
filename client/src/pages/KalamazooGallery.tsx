@@ -9,6 +9,9 @@ import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import GalleryLightbox, { GalleryImage } from "@/components/GalleryLightbox";
+import { formatPublishedDate } from "@/content/formatDate";
+import { sortByPublishedAtDesc } from "@/content/sort";
+import LazyImage from "@/components/LazyImage";
 import {
   ANDROMEDA_M31,
   CYGNUS_LOOP,
@@ -21,13 +24,14 @@ import {
   KALAMAZOO_DOWNTOWN,
 } from "@/lib/assets";
 
-const kalamazooImages: GalleryImage[] = [
+const kalamazooImages: GalleryImage[] = sortByPublishedAtDesc<GalleryImage>([
   {
     id: "kzoo-1",
     src: ANDROMEDA_M31,
     title: "Andromeda Galaxy (M31)",
     object: "M31 — Andromeda Galaxy",
     date: "February 19, 2026",
+    publishedAt: "2026-05-23",
     location: "Kalamazoo, MI — Bortle 7",
     telescope: "William Optics Redcat 61",
     camera: "ZWO ASI2600MC Pro",
@@ -44,6 +48,7 @@ const kalamazooImages: GalleryImage[] = [
     title: "Cygnus Loop — Veil Nebula Complex",
     object: "NGC 6960 / NGC 6992 — Veil Nebula",
     date: "February 21, 2026",
+    publishedAt: "2026-05-24",
     location: "Kalamazoo, MI — Bortle 7",
     telescope: "William Optics Redcat 61",
     camera: "ZWO ASI2600MC Pro",
@@ -60,6 +65,7 @@ const kalamazooImages: GalleryImage[] = [
     title: "Rosette Nebula – 98 Minutes from Bortle 7 HOO",
     object: "Rosette Nebula (NGC 2244) — Emission Nebula",
     date: "March 2, 2026",
+    publishedAt: "2026-05-22",
     location: "Kalamazoo, MI — Bortle 7",
     telescope: "William Optics Redcat 61",
     camera: "ZWO ASI2600MC Pro",
@@ -76,6 +82,7 @@ const kalamazooImages: GalleryImage[] = [
     title: "Orion Complex Widefield – Framing Scale Under Urban Skies",
     object: "M42, M43, NGC 1977, Horsehead & Flame Nebulae",
     date: "March 11, 2026",
+    publishedAt: "2026-05-22",
     location: "Kalamazoo, MI — Bortle 7",
     telescope: "William Optics Redcat 61",
     camera: "ZWO ASI2600MC Pro",
@@ -92,6 +99,7 @@ const kalamazooImages: GalleryImage[] = [
     title: "IC 1805 — The Heart Nebula",
     object: "IC 1805 — Heart Nebula",
     date: "April 1, 2026",
+    publishedAt: "2026-05-22",
     location: "Kalamazoo, MI — Bortle 7",
     telescope: "William Optics Redcat 61",
     camera: "ZWO ASI2600MC Pro",
@@ -108,6 +116,7 @@ const kalamazooImages: GalleryImage[] = [
     title: "M45 — The Pleiades",
     object: "M45 — The Pleiades (Seven Sisters)",
     date: "May 4, 2026",
+    publishedAt: "2026-05-22",
     location: "Kalamazoo, MI — Bortle 7",
     telescope: "William Optics Redcat 61",
     camera: "ZWO ASI2600MC Pro",
@@ -124,6 +133,7 @@ const kalamazooImages: GalleryImage[] = [
     title: "Lessons from a Year-Round Galaxy",
     object: "M81 (Bode's Galaxy) & M82 (Cigar Galaxy)",
     date: "March 19, 2026",
+    publishedAt: "2026-05-22",
     location: "AirBnb in Stephens, GA — Bortle 4",
     telescope: "Askar SQA85",
     camera: "ZWO ASI585MC AIR",
@@ -140,6 +150,7 @@ const kalamazooImages: GalleryImage[] = [
     title: "The Waxing Crescent",
     object: "Moon — Waxing Crescent",
     date: "March 29, 2026",
+    publishedAt: "2026-05-22",
     location: "Kalamazoo, MI — Backyard",
     telescope: "Canon RF 200-800mm F6.3-9 IS USM",
     camera: "Canon EOS R5 Mark II",
@@ -150,7 +161,7 @@ const kalamazooImages: GalleryImage[] = [
     description: "A thin waxing crescent captured from my backyard. This was a relatively simple session while working through longer deep sky projects.\n\nThe image was taken with a Canon R5 Mark II and a variable lens at 500mm. Earthshine is present but intentionally kept subtle. Conditions were slightly hazy, and pushing it further began to degrade the image, so the focus remained on preserving the natural contrast and detail along the illuminated limb.",
     tags: ["Moon", "Lunar", "Crescent", "Canon", "Backyard"],
   },
-];
+]);
 
 export default function KalamazooGallery() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
@@ -196,7 +207,8 @@ export default function KalamazooGallery() {
 
             {/* Featured image — Kalamazoo Downtown */}
             <div className="relative">
-              <img
+              <LazyImage
+                eager
                 src={KALAMAZOO_DOWNTOWN}
                 alt="Kalamazoo Downtown"
                 className="w-full object-cover"
@@ -260,7 +272,7 @@ export default function KalamazooGallery() {
                 className="relative group cursor-pointer overflow-hidden"
                 onClick={() => setLightboxIndex(index)}
               >
-                <img
+                <LazyImage
                   src={img.src}
                   alt={img.title}
                   className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -308,7 +320,15 @@ export default function KalamazooGallery() {
                       className="nav-label"
                       style={{ color: "oklch(0.50 0.01 240)", fontSize: "0.65rem" }}
                     >
-                      {img.date}
+                      Captured {img.date}
+                    </span>
+                  )}
+                  {img.publishedAt && (
+                    <span
+                      className="nav-label"
+                      style={{ color: "oklch(0.50 0.01 240)", fontSize: "0.65rem" }}
+                    >
+                      Published {formatPublishedDate(img.publishedAt)}
                     </span>
                   )}
                 </div>

@@ -15,37 +15,13 @@ import {
   ANDROMEDA_M31,
   CYGNUS_LOOP,
   ORION_COMPLEX,
-  ROSETTE_NEBULA,
-  PLEIADES_M45,
   SEESTAR_M51_WHIRLPOOL,
 } from "@/lib/assets";
+import { getLatestNews } from "@/content/getLatestNews";
+import { formatPublishedDate } from "@/content/formatDate";
+import LazyImage from "@/components/LazyImage";
 
-const newsItems = [
-  {
-    date: "April 2026",
-    category: "New Image",
-    title: "M45 — The Pleiades from Kalamazoo",
-    excerpt: "The iconic Seven Sisters captured under Bortle 7 skies. Reflection nebulosity and dust lanes revealed through careful processing.",
-    href: "/kalamazoo-gallery",
-    image: PLEIADES_M45,
-  },
-  {
-    date: "April 2026",
-    category: "New Image",
-    title: "Cygnus Loop — 28 Hours from Kalamazoo",
-    excerpt: "The Veil Nebula complex captured under Bortle 7 skies with a dedicated SHO narrowband setup. Nearly 28 hours of integration reveals intricate filamentary structure.",
-    href: "/kalamazoo-gallery",
-    image: CYGNUS_LOOP,
-  },
-  {
-    date: "March 2026",
-    category: "Gallery Update",
-    title: "Andromeda Galaxy — 30+ Hours LRGB+Ha",
-    excerpt: "M31 imaged from Kalamazoo with LRGBHa filters. Over 30 hours of integration reveals dust lanes, bright core, and subtle star-forming regions.",
-    href: "/kalamazoo-gallery",
-    image: ANDROMEDA_M31,
-  },
-];
+const newsItems = getLatestNews(3);
 
 const sections = [
   {
@@ -232,7 +208,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {newsItems.map((item, i) => (
-              <RevealSection key={item.title} delay={i * 100}>
+              <RevealSection key={item.id} delay={i * 100}>
                 <Link href={item.href}>
                   <article
                     className="group h-full flex flex-col overflow-hidden transition-transform duration-300 hover:-translate-y-1"
@@ -242,7 +218,7 @@ export default function Home() {
                     }}
                   >
                     <div className="overflow-hidden aspect-video">
-                      <img
+                      <LazyImage
                         src={item.image}
                         alt={item.title}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -265,7 +241,7 @@ export default function Home() {
                           className="nav-label"
                           style={{ color: "oklch(0.50 0.01 240)", fontSize: "0.65rem" }}
                         >
-                          {item.date}
+                          {formatPublishedDate(item.publishedAt)}
                         </span>
                       </div>
                       <h3
@@ -329,7 +305,7 @@ export default function Home() {
                       className="group relative overflow-hidden h-72 flex flex-col justify-end cursor-pointer"
                       style={{ border: "1px solid oklch(1 0 0 / 0.08)" }}
                     >
-                      <img
+                      <LazyImage
                         src={section.image}
                         alt={section.title}
                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -421,7 +397,7 @@ export default function Home() {
                   className="aspect-video overflow-hidden"
                   style={{ border: "1px solid oklch(0.72 0.12 75 / 0.3)" }}
                 >
-                  <img
+                  <LazyImage
                     src={ORION_COMPLEX}
                     alt="Midnight Zoo YouTube"
                     className="w-full h-full object-cover"

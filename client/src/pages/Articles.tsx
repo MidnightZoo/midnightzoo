@@ -9,20 +9,23 @@ import { ArrowRight, Clock } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { HERO_MILKYWAY, MWR_HERO } from "@/lib/assets";
+import { sortByPublishedAtDesc } from "@/content/sort";
+import { formatPublishedDate } from "@/content/formatDate";
+import LazyImage from "@/components/LazyImage";
 
-const articles = [
+const articles = sortByPublishedAtDesc([
   {
     id: "the-milky-way-rises",
     href: "/articles/the-milky-way-rises",
     kicker: "Field Notes · Spring 2026",
     title: "The Milky Way Rises",
-    date: "May 25, 2026",
+    publishedAt: "2026-05-25",
     image: MWR_HERO,
     excerpt:
       "Escape reality with me in this recount of my spring Milky Way chase, and the dangers and learning experiences that come with shooting in the desert.",
     tags: ["Milky Way", "Wide Field", "Arizona", "Travel", "Dark Site"],
   },
-];
+]);
 
 export default function Articles() {
   return (
@@ -82,7 +85,7 @@ export default function Articles() {
             >
               {/* Image */}
               <div className="relative overflow-hidden">
-                <img
+                <LazyImage
                   src={article.image}
                   alt={article.title}
                   className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -128,7 +131,7 @@ export default function Articles() {
                     className="nav-label"
                     style={{ color: "oklch(0.50 0.01 240)", fontSize: "0.65rem" }}
                   >
-                    {article.date}
+                    Published {formatPublishedDate(article.publishedAt)}
                   </span>
                 </div>
 

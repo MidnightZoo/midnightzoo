@@ -262,9 +262,9 @@ export default function MilkyWayRises() {
               ✦
             </span>
             <span>
-              <span style={{ color: "oklch(0.72 0.12 75)" }}>Date</span>
+              <span style={{ color: "oklch(0.72 0.12 75)" }}>Published</span>
               <span className="mx-2" style={{ color: "oklch(0.72 0.12 75 / 0.5)" }}>·</span>
-              05/25/26
+              May 25, 2026
             </span>
           </div>
         </div>

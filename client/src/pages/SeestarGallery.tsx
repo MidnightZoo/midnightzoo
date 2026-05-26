@@ -9,16 +9,20 @@ import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import GalleryLightbox, { GalleryImage } from "@/components/GalleryLightbox";
+import { formatPublishedDate } from "@/content/formatDate";
+import { sortByPublishedAtDesc } from "@/content/sort";
+import LazyImage from "@/components/LazyImage";
 import { SEESTAR_M51_WHIRLPOOL, SEESTAR_M44_BEEHIVE } from "@/lib/assets";
 import { Telescope } from "lucide-react";
 
-const seestarImages: GalleryImage[] = [
+const seestarImages: GalleryImage[] = sortByPublishedAtDesc<GalleryImage>([
   {
     id: "ss-1",
     src: SEESTAR_M51_WHIRLPOOL,
     title: "M51 — The Whirlpool Galaxy",
     object: "M51 — Whirlpool Galaxy & NGC 5195",
     date: "April 2025",
+    publishedAt: "2026-05-22",
     location: "Kalamazoo, MI — Bortle 7",
     telescope: "ZWO Seestar S50",
     camera: "ZWO Seestar S50 (built-in)",
@@ -35,6 +39,7 @@ const seestarImages: GalleryImage[] = [
     title: "M44 — The Beehive Cluster",
     object: "M44 — Beehive Cluster (Praesepe)",
     date: "April 2025",
+    publishedAt: "2026-05-22",
     location: "Kalamazoo, MI — Bortle 7",
     telescope: "ZWO Seestar S50",
     camera: "ZWO Seestar S50 (built-in)",
@@ -45,7 +50,7 @@ const seestarImages: GalleryImage[] = [
     description: "The Beehive Cluster (M44, also known as Praesepe) is an open star cluster in the constellation Cancer, approximately 577 light-years from Earth. It contains over 1,000 stars and is one of the nearest open clusters to our solar system.\n\nCaptured with the ZWO Seestar S50 from Kalamazoo's Bortle 7 skies. The cluster's wide angular extent — roughly 1.5 degrees across — makes it a natural fit for the Seestar's field of view, and the built-in light pollution filter helps preserve star color against the urban sky background.\n\nOpen clusters like M44 are often overlooked in favor of more dramatic nebulae and galaxies, but they offer a different kind of visual reward — a sense of depth and three-dimensional structure that reminds you these are real suns, scattered across real space.",
     tags: ["Star Cluster", "M44", "Beehive", "Praesepe", "Seestar", "Smart Telescope", "Urban", "Bortle 7"],
   },
-];
+]);
 
 export default function SeestarGallery() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
@@ -177,7 +182,7 @@ export default function SeestarGallery() {
                 className="relative group cursor-pointer overflow-hidden"
                 onClick={() => setLightboxIndex(index)}
               >
-                <img
+                <LazyImage
                   src={img.src}
                   alt={img.title}
                   className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -220,7 +225,12 @@ export default function SeestarGallery() {
                   </span>
                   {img.date && (
                     <span className="nav-label" style={{ color: "oklch(0.50 0.01 240)", fontSize: "0.65rem" }}>
-                      {img.date}
+                      Captured {img.date}
+                    </span>
+                  )}
+                  {img.publishedAt && (
+                    <span className="nav-label" style={{ color: "oklch(0.50 0.01 240)", fontSize: "0.65rem" }}>
+                      Published {formatPublishedDate(img.publishedAt)}
                     </span>
                   )}
                 </div>
