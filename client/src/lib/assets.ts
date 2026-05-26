@@ -23,6 +23,7 @@ export const IC1805_HEART = "/images/ic1805_heart_nebula.webp";
 export const PLEIADES_M45 = "/images/pleiades_m45.webp";
 export const M81_M82_BODES = "/images/m81_m82_bodes_galaxy.webp";
 export const WAXING_CRESCENT = "/images/waxing_crescent_moon.webp";
+export const M101_PINWHEEL = "/images/m101_pinwheel.webp";
 
 // -- Travel Gallery ----------------------------------------------------------
 export const MILKYWAY_IRONWOOD = "/images/milkyway_az.webp";

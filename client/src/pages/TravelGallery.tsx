@@ -12,16 +12,33 @@ import { formatPublishedDate } from "@/content/formatDate";
 import { sortByPublishedAtDesc } from "@/content/sort";
 import LazyImage from "@/components/LazyImage";
 import { MapPin, Clock } from "lucide-react";
-import { MILKYWAY_IRONWOOD } from "@/lib/assets";
+import { MILKYWAY_IRONWOOD, M81_M82_BODES } from "@/lib/assets";
 
 const travelImages: GalleryImage[] = sortByPublishedAtDesc<GalleryImage>([
+  {
+    id: "tr-2",
+    src: M81_M82_BODES,
+    title: "Lessons from a Year-Round Galaxy",
+    object: "M81 (Bode's Galaxy) & M82 (Cigar Galaxy)",
+    date: "March 19, 2026",
+    publishedAt: "2026-05-22",
+    location: "AirBnB in Stephens, GA — Bortle 4",
+    telescope: "Askar SQA85",
+    camera: "ZWO ASI585MC AIR",
+    mount: "ZWO AM3N",
+    filters: "Baader UV/IR Cut",
+    integration: "4h 10m",
+    bortle: "4",
+    description: "While I've owned telescopes for nearly 25 years, my dedicated astrophotography journey began in the summer of 2025. Since then I've returned repeatedly to Bode's Galaxy and the Cigar from my backyard. From my location, M81 is visible year-round, making it both an ideal training ground and a persistent technical challenge.\n\nUnder Bortle 7 skies, capturing meaningful structure in these galaxies required balancing signal preservation, processing restraint, and a skill set that was evolving quickly with each attempt. Progress came gradually, often measured in small improvements rather than finished images.\n\nRecently, while traveling, I had the opportunity to image from darker Bortle 4 skies outside Atlanta. The change in sky quality was immediately apparent. Combined with more deliberate processing choices and a clearer understanding of my workflow, this session produced a result that finally reflects the vision I had been working toward.\n\nMore than a single image, this capture represents persistence and refinement. It reveals not only the graceful spiral structure of M81 and the turbulent starburst activity of M82, but also a meaningful milestone in a journey that continues to unfold.",
+    tags: ["Galaxy", "M81", "M82", "Bode's Galaxy", "Cigar Galaxy", "Broadband", "Dark Site", "Bortle 4"],
+  },
   {
     id: "tr-1",
     src: MILKYWAY_IRONWOOD,
     title: "Milky Way above Ironwood Forest National Monument",
     object: "Milky Way — Galactic Core",
     date: "April 15, 2025",
-    publishedAt: "2026-05-22",
+    publishedAt: "2026-05-25",
     location: "Ironwood Forest National Monument, Marana, AZ — Bortle 3",
     telescope: "Canon RF 24mm f/1.4",
     camera: "Canon EOS R5 Mark II",

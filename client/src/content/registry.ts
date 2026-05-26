@@ -25,6 +25,7 @@ import {
   PLEIADES_M45,
   M81_M82_BODES,
   WAXING_CRESCENT,
+  M101_PINWHEEL,
   KALAMAZOO_DOWNTOWN,
   MILKYWAY_IRONWOOD,
   SEESTAR_M51_WHIRLPOOL,
@@ -48,6 +49,17 @@ export const contentRegistry: ContentItem[] = [
   },
 
   // ── Kalamazoo Gallery images ─────────────────────────────
+  {
+    id: "gallery-image-kzoo-9",
+    kind: "gallery-image",
+    publishedAt: "2026-05-26",
+    title: "Messier 101 — The Pinwheel Galaxy",
+    category: "Kalamazoo Gallery",
+    excerpt:
+      "M101 captured from Kalamazoo across three April nights with a 200mm Imaging Newtonian. A blended broadband + Hα workflow brings out faint outer structure and star-forming regions while preserving the galaxy's natural character.",
+    href: "/kalamazoo-gallery",
+    image: M101_PINWHEEL,
+  },
   {
     id: "gallery-image-kzoo-1",
     kind: "gallery-image",
@@ -115,17 +127,6 @@ export const contentRegistry: ContentItem[] = [
     image: PLEIADES_M45,
   },
   {
-    id: "gallery-image-kzoo-7",
-    kind: "gallery-image",
-    publishedAt: "2026-05-22",
-    title: "M81 & M82 — Bode's Galaxy and the Cigar",
-    category: "Kalamazoo Gallery",
-    excerpt:
-      "A galaxy pair in Ursa Major rendered from Bortle 7 skies. Two very different galaxies, twelve million light-years apart from each other.",
-    href: "/kalamazoo-gallery",
-    image: M81_M82_BODES,
-  },
-  {
     id: "gallery-image-kzoo-8",
     kind: "gallery-image",
     publishedAt: "2026-05-22",
@@ -141,13 +142,24 @@ export const contentRegistry: ContentItem[] = [
   {
     id: "gallery-image-tr-1",
     kind: "gallery-image",
-    publishedAt: "2026-05-22",
+    publishedAt: "2026-05-25",
     title: "Milky Way above Ironwood Forest National Monument",
     category: "Travel Gallery",
     excerpt:
-      "Captured between 2–3 AM in the Arizona desert, Bortle 3. A composite of 16 sky frames and a single foreground exposure with the saguaros below the galactic core.",
+      "Captured between 2–3 AM in the Arizona desert, Bortle 3. A composite of 16 sky frames and a single foreground exposure with the saguaros below the galactic core. The image that anchors The Milky Way Rises.",
     href: "/travel-gallery",
     image: MILKYWAY_IRONWOOD,
+  },
+  {
+    id: "gallery-image-tr-2",
+    kind: "gallery-image",
+    publishedAt: "2026-05-22",
+    title: "M81 & M82 — Bode's Galaxy and the Cigar",
+    category: "Travel Gallery",
+    excerpt:
+      "A galaxy pair in Ursa Major imaged from Bortle 4 skies outside Atlanta. Two very different galaxies, twelve million light-years apart from each other.",
+    href: "/travel-gallery",
+    image: M81_M82_BODES,
   },
 
   // ── Seestar Gallery images ───────────────────────────────
