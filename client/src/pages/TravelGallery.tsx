@@ -23,7 +23,7 @@ const travelImages: GalleryImage[] = sortByPublishedAtDesc<GalleryImage>([
     date: "March 19, 2026",
     publishedAt: "2026-05-22",
     location: "AirBnB in Stephens, GA — Bortle 4",
-    telescope: "Askar SQA85",
+    telescope: "Askar SQA55",
     camera: "ZWO ASI585MC AIR",
     mount: "ZWO AM3N",
     filters: "Baader UV/IR Cut",
