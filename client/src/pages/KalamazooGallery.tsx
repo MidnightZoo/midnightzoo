@@ -22,9 +22,27 @@ import {
   WAXING_CRESCENT,
   KALAMAZOO_DOWNTOWN,
   M101_PINWHEEL,
+  WIZARD_NEBULA,
 } from "@/lib/assets";
 
 const kalamazooImages: GalleryImage[] = sortByPublishedAtDesc<GalleryImage>([
+  {
+    id: "kzoo-10",
+    src: WIZARD_NEBULA,
+    title: "NGC 7380 — The Wizard Nebula",
+    object: "NGC 7380 — Wizard Nebula",
+    date: "May–June 2026",
+    publishedAt: "2026-06-08",
+    location: "Backyard — Kalamazoo, MI",
+    telescope: "William Optics Redcat 61",
+    camera: "ZWO ASI2600MM Pro",
+    mount: "ZWO AM3N",
+    filters: "Optolong 3nm SHO + Baader RGB (stars)",
+    integration: "16h 12m SHO + RGB stars",
+    bortle: "7 (Urban)",
+    description: "The Wizard Nebula (NGC 7380) is one of those targets that rewards a closer look. What first appears to be a simple blue cavity is actually a landscape of dark dust, ionized gas, and intricate shock fronts carved by young stars hidden within the nebula.\n\nCaptured in a traditional SHO palette with separate RGB stars, this image highlights the glowing oxygen chamber surrounded by sulfur-rich ridgelines that give the Wizard its unmistakable shape. The contrast between the cool teal interior and the warm golden edges reveals the ongoing interaction between stellar radiation and the surrounding cloud of gas and dust.\n\nEven after more than 16 hours of integration, I found myself discovering new details every time I zoomed in — delicate pillars, dark tendrils, and subtle structures hidden throughout the nebula's vast interior.\n\nAcquisition: SII 31 × 450s (3h 52m), Hα 55 × 450s (6h 52m), OIII 30 × 450s (3h 45m). Stars: R 30 × 60s, G 33 × 60s, B 40 × 60s.",
+    tags: ["Nebula", "Emission", "NGC 7380", "Wizard Nebula", "SHO", "Hubble Palette", "Narrowband", "Urban", "Bortle 7"],
+  },
   {
     id: "kzoo-9",
     src: M101_PINWHEEL,

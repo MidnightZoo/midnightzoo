@@ -26,6 +26,7 @@ import {
   M81_M82_BODES,
   WAXING_CRESCENT,
   M101_PINWHEEL,
+  WIZARD_NEBULA,
   KALAMAZOO_DOWNTOWN,
   MILKYWAY_IRONWOOD,
   SEESTAR_M51_WHIRLPOOL,
@@ -49,6 +50,17 @@ export const contentRegistry: ContentItem[] = [
   },
 
   // ── Kalamazoo Gallery images ─────────────────────────────
+  {
+    id: "gallery-image-kzoo-10",
+    kind: "gallery-image",
+    publishedAt: "2026-06-08",
+    title: "NGC 7380 — The Wizard Nebula",
+    category: "Kalamazoo Gallery",
+    excerpt:
+      "16+ hours of narrowband SHO with separate RGB stars from a Bortle 7 backyard. The orange sulfur ridgelines wrap a glowing oxygen cavity — every zoom reveals another layer of pillars, tendrils, and shock fronts.",
+    href: "/kalamazoo-gallery",
+    image: WIZARD_NEBULA,
+  },
   {
     id: "gallery-image-kzoo-9",
     kind: "gallery-image",
