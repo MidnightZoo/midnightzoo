@@ -247,6 +247,43 @@
     text-transform: uppercase;
   }
 
+  /* ── LOGO WORDMARK ── */
+  .mz-logo {
+    font-family: 'Gilda Display', Georgia, serif;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: #24153A;
+  }
+
+  .mz-logo-glow {
+    position: absolute;
+    inset: 0;
+    color: transparent;
+    background: radial-gradient(
+      4.5em circle at var(--mx, 50%) var(--my, 50%),
+      #E4D6FF 0%,
+      #9A74D8 40%,
+      transparent 72%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    filter: drop-shadow(0 0 0.3em oklch(0.75 0.15 300 / 0.4));
+    opacity: 0;
+    transition: opacity 1.4s ease;
+    pointer-events: none;
+  }
+
+  .mz-logo:hover .mz-logo-glow {
+    opacity: 1;
+  }
+
+  /* Touch screens never hover — keep the wordmark faintly readable there */
+  @media (hover: none) {
+    .mz-logo {
+      color: #4D2C6D;
+    }
+  }
+
   /* ── GOLD RULE ── */
   .gold-rule {
     border: none;

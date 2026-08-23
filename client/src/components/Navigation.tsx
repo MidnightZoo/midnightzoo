@@ -14,6 +14,7 @@ import {
   NavigationMenuItem,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
+import Logo from "@/components/Logo";
 
 const GOLD = "oklch(0.72 0.12 75)";
 const GRAY = "oklch(0.75 0.005 240)";
@@ -137,11 +138,7 @@ export default function Navigation() {
             {/* Logo */}
             <Link href="/">
               <div className="flex items-center gap-3 group">
-                <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663525875532/hDoq8Cj6JbDrB4hz6G3Gcz/midnight_zoo_logo_da38cb1b.png"
-                  alt="Midnight Zoo"
-                  className="h-10 lg:h-12 w-auto object-contain transition-opacity duration-200 group-hover:opacity-80"
-                />
+                <Logo className="text-2xl lg:text-3xl" />
               </div>
             </Link>
 

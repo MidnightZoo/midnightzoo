@@ -5,6 +5,7 @@
 
 import { Link } from "wouter";
 import { Youtube, Instagram, Facebook, Twitter } from "lucide-react";
+import Logo from "@/components/Logo";
 
 const footerLinks = [
   { href: "/starfront-gallery", label: "Starfront Gallery" },
@@ -36,11 +37,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Brand column */}
           <div className="md:col-span-1">
-            <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663525875532/hDoq8Cj6JbDrB4hz6G3Gcz/midnight_zoo_logo_da38cb1b.png"
-              alt="Midnight Zoo"
-              className="h-14 w-auto object-contain mb-4"
-            />
+            <div className="mb-4">
+              <Logo className="text-3xl" />
+            </div>
             <p
               className="text-sm leading-relaxed mb-6"
               style={{ color: "oklch(0.60 0.01 240)", fontFamily: "'Figtree', system-ui, sans-serif" }}

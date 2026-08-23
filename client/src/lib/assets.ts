@@ -5,10 +5,7 @@
    See README.md "Image migration" for the file list.
    ============================================================ */
 
-// -- Logo ---------------------------------------------------------------------
-// Hosted on your existing GoDaddy CDN. Replace once you migrate the logo file.
-export const LOGO =
-  "https://lirp.cdn-website.com/md/dmtmpl/dms3rep/multi/opt/midnight-zoo-logo-transparent-1920w.png";
+// -- Logo: see components/Logo.tsx (inline wordmark; old CDN hosts went away)
 
 // -- Hero (Milky Way above Ironwood Forest National Monument, AZ) ------------
 export const HERO_MILKYWAY = "/images/milkyway_az.webp";
