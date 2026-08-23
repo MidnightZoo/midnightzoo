@@ -248,11 +248,23 @@
   }
 
   /* ── LOGO WORDMARK ── */
+  /* Light floods out from the cursor until the whole word is lit,
+     then recedes back to the cursor point on mouse-out. --mz-r is
+     the flood radius, registered via @property (end of file) so it
+     can transition; 15em is enough to reach the far end of the
+     word from either edge. */
   .mz-logo {
     font-family: 'Gilda Display', Georgia, serif;
     font-weight: 700;
     letter-spacing: 0.04em;
     color: #24153A;
+    --mz-r: 0px;
+    transition: --mz-r 8s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
+  .mz-logo:hover {
+    --mz-r: 15em;
+    transition: --mz-r 6s cubic-bezier(0.22, 0.61, 0.36, 1);
   }
 
   .mz-logo-glow {
@@ -260,21 +272,15 @@
     inset: 0;
     color: transparent;
     background: radial-gradient(
-      4.5em circle at var(--mx, 50%) var(--my, 50%),
+      var(--mz-r) circle at var(--mx, 50%) var(--my, 50%),
       #E4D6FF 0%,
-      #9A74D8 40%,
-      transparent 72%
+      #9A74D8 45%,
+      transparent 80%
     );
     -webkit-background-clip: text;
     background-clip: text;
     filter: drop-shadow(0 0 0.3em oklch(0.75 0.15 300 / 0.4));
-    opacity: 0;
-    transition: opacity 1.4s ease;
     pointer-events: none;
-  }
-
-  .mz-logo:hover .mz-logo-glow {
-    opacity: 1;
   }
 
   /* Touch screens never hover — keep the wordmark faintly readable there */
@@ -344,4 +350,12 @@
   .group:hover .group-hover\:scale-102 {
     transform: scale(1.02);
   }
+}
+
+/* Registered so the logo's flood radius (--mz-r) can transition;
+   plain custom properties snap instead of animating. */
+@property --mz-r {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 0px;
 }
