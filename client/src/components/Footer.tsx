@@ -143,7 +143,7 @@ export default function Footer() {
             className="nav-label"
             style={{ color: "oklch(0.40 0.01 240)", fontSize: "0.7rem" }}
           >
-            © {new Date().getFullYear()} Midnight Zoo™. All rights reserved.
+            © {new Date().getFullYear()} Zenith Forge LLC. Midnight Zoo is a registered assumed name of Zenith Forge LLC. All rights reserved.
           </p>
         </div>
       </div>
