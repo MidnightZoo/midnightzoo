@@ -31,6 +31,7 @@ import {
   MILKYWAY_IRONWOOD,
   SEESTAR_M51_WHIRLPOOL,
   SEESTAR_M44_BEEHIVE,
+  SEESTAR_NGC6946_FIREWORKS,
   MWR_HERO,
 } from "@/lib/assets";
 import type { ContentItem } from "./types";
@@ -196,5 +197,16 @@ export const contentRegistry: ContentItem[] = [
       "The Beehive open cluster in Cancer captured with the ZWO Seestar S50. Star color preserved against the urban sky background by the built-in LP filter.",
     href: "/seestar-gallery",
     image: SEESTAR_M44_BEEHIVE,
+  },
+  {
+    id: "gallery-image-ss-3",
+    kind: "gallery-image",
+    publishedAt: "2026-09-01",
+    title: "Fireworks and Starlight (Seestar S30 Pro)",
+    category: "Seestar Gallery",
+    excerpt:
+      "The Fireworks Galaxy (NGC 6946) and the open cluster NGC 6939 in one frame — 5,600 light-years and 25 million light-years, side by side. 9h 16m from a Bortle 7 backyard on the new Seestar S30 Pro.",
+    href: "/seestar-gallery",
+    image: SEESTAR_NGC6946_FIREWORKS,
   },
 ];

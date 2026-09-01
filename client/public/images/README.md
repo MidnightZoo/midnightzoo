@@ -23,6 +23,7 @@ the build root).
 | `waxing_crescent_moon.webp`       | Waxing crescent moon                    |
 | `seestar_m51_whirlpool.webp`      | Whirlpool Galaxy (M51) - Seestar S50    |
 | `seestar_m44_beehive.webp`        | Beehive Cluster (M44) - Seestar S50     |
+| `seestar_ngc6946_fireworks_galaxy.webp` | Fireworks Galaxy (NGC 6946) & NGC 6939 - Seestar S30 Pro |
 
 ## Where to get the originals
 

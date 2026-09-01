@@ -34,7 +34,7 @@ const sections = [
   {
     icon: Telescope,
     title: "Seestar Gallery",
-    description: "What an inexpensive smart telescope can do. The Seestar S50 proves dark skies aren't required for stunning results.",
+    description: "What an inexpensive smart telescope can do. Shot with a ZWO Seestar — proof that dark skies aren't required for stunning results.",
     href: "/seestar-gallery",
     image: SEESTAR_M51_WHIRLPOOL,
   },

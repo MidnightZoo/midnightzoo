@@ -36,3 +36,4 @@ export const MWR_RIG_AT_NIGHT = "/images/mwr_rig_at_night.webp";
 // -- Seestar Gallery ---------------------------------------------------------
 export const SEESTAR_M51_WHIRLPOOL = "/images/seestar_m51_whirlpool.webp";
 export const SEESTAR_M44_BEEHIVE = "/images/seestar_m44_beehive.webp";
+export const SEESTAR_NGC6946_FIREWORKS = "/images/seestar_ngc6946_fireworks_galaxy.webp";
