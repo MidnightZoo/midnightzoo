@@ -59,7 +59,7 @@ export const contentRegistry: ContentItem[] = [
     title: "NGC 2244 / Caldwell 49 — The Rosette Nebula (SHO)",
     category: "Kalamazoo Gallery",
     excerpt:
-      "A full SHO palette pulled out of a one-shot color camera using two dual-band filters — Ha, SII, and two independent OIII measurements combined by inverse-variance weighting rather than a flat average. 5h 50m from a Bortle 6.66 backyard on the Askar SQA85.",
+      "A full SHO palette pulled out of a one-shot color camera using two dual-band filters — Ha, SII, and two independent OIII measurements combined by inverse-variance weighting rather than a flat average. 5h 50m from a Bortle 7 backyard on the Askar SQA85.",
     href: "/kalamazoo-gallery",
     image: ROSETTE_SHO,
   },
