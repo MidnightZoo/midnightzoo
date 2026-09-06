@@ -22,6 +22,7 @@ export const M81_M82_BODES = "/images/m81_m82_bodes_galaxy.webp";
 export const WAXING_CRESCENT = "/images/waxing_crescent_moon.webp";
 export const M101_PINWHEEL = "/images/m101_pinwheel.webp";
 export const WIZARD_NEBULA = "/images/ngc7380_wizard_nebula.webp";
+export const ROSETTE_SHO = "/images/ngc2244_rosette_sho.webp";
 
 // -- Travel Gallery ----------------------------------------------------------
 export const MILKYWAY_IRONWOOD = "/images/milkyway_az.webp";

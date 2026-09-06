@@ -27,6 +27,7 @@ import {
   WAXING_CRESCENT,
   M101_PINWHEEL,
   WIZARD_NEBULA,
+  ROSETTE_SHO,
   KALAMAZOO_DOWNTOWN,
   MILKYWAY_IRONWOOD,
   SEESTAR_M51_WHIRLPOOL,
@@ -51,6 +52,17 @@ export const contentRegistry: ContentItem[] = [
   },
 
   // ── Kalamazoo Gallery images ─────────────────────────────
+  {
+    id: "gallery-image-kzoo-11",
+    kind: "gallery-image",
+    publishedAt: "2026-09-06",
+    title: "NGC 2244 / Caldwell 49 — The Rosette Nebula (SHO)",
+    category: "Kalamazoo Gallery",
+    excerpt:
+      "The deep SHO treatment the 98-minute HOO version promised. Oxygen floods the excavated cavity in teal while sulfur and hydrogen build the gold ridgelines wrapping the rim — and the Bok globules along the inner wall finally hold up to a zoom.",
+    href: "/kalamazoo-gallery",
+    image: ROSETTE_SHO,
+  },
   {
     id: "gallery-image-kzoo-10",
     kind: "gallery-image",

@@ -23,9 +23,21 @@ import {
   KALAMAZOO_DOWNTOWN,
   M101_PINWHEEL,
   WIZARD_NEBULA,
+  ROSETTE_SHO,
 } from "@/lib/assets";
 
 const kalamazooImages: GalleryImage[] = sortByPublishedAtDesc<GalleryImage>([
+  {
+    id: "kzoo-11",
+    src: ROSETTE_SHO,
+    title: "NGC 2244 / Caldwell 49 — The Rosette Nebula (SHO)",
+    object: "NGC 2244 / Caldwell 49 — Rosette Nebula",
+    publishedAt: "2026-09-06",
+    location: "Kalamazoo, MI — Bortle 7",
+    bortle: "7 (Urban)",
+    description: "The Rosette sits roughly 5,000 light-years away in Monoceros, a star-forming cloud about 130 light-years across. The open cluster at its heart, NGC 2244, is responsible for everything visible here: stellar winds and ultraviolet radiation from those young, massive stars have excavated the dark central cavity and lit the surrounding gas from the inside out.\n\nThis is the deep SHO integration that the 98-minute HOO version further down this page promised. Mapping sulfur, hydrogen, and oxygen to separate channels pulls the nebula apart into its constituent layers — oxygen flooding the inner cavity in teal, hydrogen and sulfur building the warmer gold ridgelines that wrap the outer rim.\n\nThe details worth zooming into are the dark ones. Bok globules — cold, dense knots of dust that have so far survived the cluster's radiation — stand out in silhouette along the inner wall, several of them drawn into elephant-trunk pillars pointing back toward the stars eroding them. Those are exactly the structures that short integration flattens into noise, and the reason the deeper data was worth waiting for.",
+    tags: ["Nebula", "Emission", "NGC 2244", "Caldwell 49", "Rosette", "SHO", "Hubble Palette", "Narrowband", "Urban", "Bortle 7"],
+  },
   {
     id: "kzoo-10",
     src: WIZARD_NEBULA,
